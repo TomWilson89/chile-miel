@@ -1,0 +1,66 @@
+@import "../../../styles/colors";
+@import "../../../styles/buttons";
+@import "../../../styles/breakpoints";
+
+.Container {
+  background-color: darken($honey-yellow-400, 10%);
+
+  .Navbar {
+    max-width: 2000px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    margin: 0 auto;
+
+    img {
+      width: 80px;
+      cursor: pointer;
+    }
+
+    div {
+      ul {
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+
+        button {
+          @include button2;
+        }
+
+        a {
+          @include button2;
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      div {
+        ul {
+          a,
+          button {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-xs) {
+      justify-content: center;
+      text-align: center;
+
+      img {
+        display: none;
+      }
+    }
+
+    @media (max-width: $breakpoint-xxs) {
+      > div {
+        > ul {
+          a {
+            margin: 0 5px;
+          }
+        }
+      }
+    }
+  }
+}
